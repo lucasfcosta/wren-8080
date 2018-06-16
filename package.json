@@ -1,26 +1,28 @@
 {
-  "name": "your-package-name",
+  "name": "wren-8080",
   "version": "0.0.1",
-  "description": "Your package description.",
+  "description": "An Intel 8080 disassembler",
   "main": "index.js",
+  "bin": "cli/cli.js",
   "scripts": {
     "test": "mocha './{,!(node_modules)/**/}*.spec.js'",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/repo-name.git"
+    "url": "git+https://github.com/lucasfcosta/wren-8080.git"
   },
   "keywords": [
-    "your",
-    "keywords"
+    "intel 8080",
+    "8080",
+    "disassembler"
   ],
-  "author": "Your Name <example@example.com>",
+  "author": "Lucas Fernandes da Costa <lucas@lucasfcosta.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/repo-name/issues"
+    "url": "https://github.com/lucasfcosta/wren-8080/issues"
   },
-  "homepage": "https://github.com/username/repo-name#readme",
+  "homepage": "https://github.com/lucasfcosta/wren-8080#readme",
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
