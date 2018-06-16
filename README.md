@@ -41,7 +41,7 @@ decode(0x01); // { name: "STAX B", size: "1" }
 ```js
 const { disassembleFile } = require('wren-8080');
 
-disassembleFile('./myFile.rom'); // [{ name: "STAX B", size: "1" }, { name: "NOP", size: "1" }]
+disassembleFile('./myFile.rom'); // [{ name: "LXI D, D16", size: "1", arg1: 0xff, arg2: 0x1c }, { name: "NOP", size: "1" }]
 ```
 
 ### Disassembling a Buffer
@@ -52,7 +52,7 @@ const { disassemble } = require('wren-8080');
 
 readFile('./myFile.rom', (err, buffer) => {
     if (err) throw e;
-    disassemble(buffer); // [{ name: "STAX B", size: "1" }, { name: "NOP", size: "1" }]
+    disassemble(buffer); // [{ name: "LXI D, D16", size: "1", arg1: 0xff, arg2: 0x1c }, { name: "NOP", size: "1" }]
 });
 ```
 
