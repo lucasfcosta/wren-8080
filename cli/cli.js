@@ -10,7 +10,7 @@ const toCsv = util.promisify(jsonexport);
 const writeFile = util.promisify(fs.writeFile);
 
 const { disassembleFile } = require('../src/disassembler');
-const { toPlainText } = require('../src/disassembler');
+const { toPlainText } = require('../src/parser');
 
 program
     .usage('[path] [options]')
