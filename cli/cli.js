@@ -2,6 +2,7 @@
 
 const util = require('util');
 const fs = require('fs');
+const dedupe = require('dedupe');
 const jsonexport = require('jsonexport');
 const program = require('commander');
 
@@ -12,12 +13,13 @@ const writeFile = util.promisify(fs.writeFile)
 const { disassembleFile } = require('../src/disassembler');
 
 program
+    .option('-d, --dedupe', 'Does not output duplicate instructions')
     .option('-c, --csv <outputPath>', 'Save the results to a csv file')
     .option('-t, --txt <outputPath>', 'Save the results to a text file')
 
 const main = async (path) => {
     const instructions = await disassembleFile(path)
-    await output(instructions)
+    await output(program.dedupe ? dedupe(instructions) : instructions)
     console.log('Done!'); // eslint-disable-line no-console
 }
 
