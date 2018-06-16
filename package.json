@@ -26,5 +26,9 @@
     "eslint": "^4.19.1",
     "js-logger": "^1.4.1",
     "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "commander": "^2.15.1",
+    "jsonexport": "^2.2.0"
   }
 }
