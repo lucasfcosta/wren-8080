@@ -2,265 +2,265 @@ const op = (name, size) => ({ name, size });
 
 const decode = (opCode) => {
     switch (opCode) {
-        case 0x00: return op("NOP", 1)
-        case 0x01: return op("LXI B,D16", 3)
-        case 0x02: return op("STAX B", 1)
-        case 0x03: return op("INX B", 1)
-        case 0x04: return op("INR B", 1)
-        case 0x05: return op("DCR B", 1)
-        case 0x06: return op("MVI B, D8", 2)
-        case 0x07: return op("RLC", 1)
-        case 0x08: return op("", 1)
-        case 0x09: return op("DAD B", 1)
-        case 0x0a: return op("LDAX B", 1)
-        case 0x0b: return op("DCX B", 1)
-        case 0x0c: return op("INR C", 1)
-        case 0x0d: return op("DCR C", 1)
-        case 0x0e: return op("MVI C,D8", 2)
-        case 0x0f: return op("RRC", 1)
-        case 0x10: return op("", 1)
-        case 0x11: return op("LXI D,D16", 3)
-        case 0x12: return op("STAX D", 1)
-        case 0x13: return op("INX D", 1)
-        case 0x14: return op("INR D", 1)
-        case 0x15: return op("DCR D", 1)
-        case 0x16: return op("MVI D, D8", 2)
-        case 0x17: return op("RAL", 1)
-        case 0x18: return op("", 1)
-        case 0x19: return op("DAD D", 1)
-        case 0x1a: return op("LDAX D", 1)
-        case 0x1b: return op("DCX D", 1)
-        case 0x1c: return op("INR E", 1)
-        case 0x1d: return op("DCR E", 1)
-        case 0x1e: return op("MVI E,D8", 2)
-        case 0x1f: return op("RAR", 1)
-        case 0x20: return op("RIM", 1)
-        case 0x21: return op("LXI H,D16", 3)
-        case 0x22: return op("SHLD adr", 3)
-        case 0x23: return op("INX H", 1)
-        case 0x24: return op("INR H", 1)
-        case 0x25: return op("DCR H", 1)
-        case 0x26: return op("MVI H,D8", 2)
-        case 0x27: return op ("DAA", 1)
-        case 0x28: return op("", 1)
-        case 0x29: return op("DAD H", 1)
-        case 0x2a: return op("LHLD adr", 3)
-        case 0x2b: return op("DCX H", 1)
-        case 0x2c: return op("INR L", 1)
-        case 0x2d: return op("DCR L", 1)
-        case 0x2e: return op("MVI L, D8", 2)
-        case 0x2f: return op("CMA", 1)
-        case 0x30: return op("SIM", 1)
-        case 0x31: return op("LXI SP, D16", 3)
-        case 0x32: return op("STA adr", 3)
-        case 0x33: return op("INX SP", 1)
-        case 0x34: return op("INR M", 1)
-        case 0x35: return op("DCR M", 1)
-        case 0x36: return op("MVI M,D8", 2)
-        case 0x37: return op("STC", 1)
-        case 0x38: return op("", 1)
-        case 0x39: return op("DAD SP", 1)
-        case 0x3a: return op("LDA adr", 3)
-        case 0x3b: return op("DCX SP", 1)
-        case 0x3c: return op("INR A", 1)
-        case 0x3d: return op("DCR A", 1)
-        case 0x3e: return op("MVI A,D8", 2)
-        case 0x3f: return op("CMC", 1)
-        case 0x40: return op("MOV B,B", 1)
-        case 0x41: return op("MOV B,C", 1)
-        case 0x42: return op("MOV B,D", 1)
-        case 0x43: return op("MOV B,E", 1)
-        case 0x44: return op("MOV B,H", 1)
-        case 0x45: return op("MOV B,L", 1)
-        case 0x46: return op("MOV B,M", 1)
-        case 0x47: return op("MOV B,A", 1)
-        case 0x48: return op("MOV C,B", 1)
-        case 0x49: return op("MOV C,C", 1)
-        case 0x4a: return op("MOV C,D", 1)
-        case 0x4b: return op("MOV C,E", 1)
-        case 0x4c: return op("MOV C,H", 1)
-        case 0x4d: return op("MOV C,L", 1)
-        case 0x4e: return op("MOV C,M", 1)
-        case 0x4f: return op("MOV C,A", 1)
-        case 0x50: return op("MOV D,B", 1)
-        case 0x51: return op("MOV D,C", 1)
-        case 0x52: return op("MOV D,D", 1)
-        case 0x53: return op("MOV D,E", 1)
-        case 0x54: return op("MOV D,H", 1)
-        case 0x55: return op("MOV D,L", 1)
-        case 0x56: return op("MOV D,M", 1)
-        case 0x57: return op("MOV D,A", 1)
-        case 0x58: return op("MOV E,B", 1)
-        case 0x59: return op("MOV E,C", 1)
-        case 0x5a: return op("MOV E,D", 1)
-        case 0x5b: return op("MOV E,E", 1)
-        case 0x5c: return op("MOV E,H", 1)
-        case 0x5d: return op("MOV E,L", 1)
-        case 0x5e: return op("MOV E,M", 1)
-        case 0x5f: return op("MOV E,A", 1)
-        case 0x60: return op("MOV H,B", 1)
-        case 0x61: return op("MOV H,C", 1)
-        case 0x62: return op("MOV H,D", 1)
-        case 0x63: return op("MOV H,E", 1)
-        case 0x64: return op("MOV H,H", 1)
-        case 0x65: return op("MOV H,L", 1)
-        case 0x66: return op("MOV H,M", 1)
-        case 0x67: return op("MOV H,A", 1)
-        case 0x68: return op("MOV L,B", 1)
-        case 0x69: return op("MOV L,C", 1)
-        case 0x6a: return op("MOV L,D", 1)
-        case 0x6b: return op("MOV L,E", 1)
-        case 0x6c: return op("MOV L,H", 1)
-        case 0x6d: return op("MOV L,L", 1)
-        case 0x6e: return op("MOV L,M", 1)
-        case 0x6f: return op("MOV L,A", 1)
-        case 0x70: return op("MOV M,B", 1)
-        case 0x71: return op("MOV M,C", 1)
-        case 0x72: return op("MOV M,D", 1)
-        case 0x73: return op("MOV M,E", 1)
-        case 0x74: return op("MOV M,H", 1)
-        case 0x75: return op("MOV M,L", 1)
-        case 0x76: return op("HLT", 1)
-        case 0x77: return op("MOV M,A", 1)
-        case 0x78: return op("MOV A,B", 1)
-        case 0x79: return op("MOV A,C", 1)
-        case 0x7a: return op("MOV A,D", 1)
-        case 0x7b: return op("MOV A,E", 1)
-        case 0x7c: return op("MOV A,H", 1)
-        case 0x7d: return op("MOV A,L", 1)
-        case 0x7e: return op("MOV A,M", 1)
-        case 0x7f: return op("MOV A,A", 1)
-        case 0x80: return op("ADD B", 1)
-        case 0x81: return op("ADD C", 1)
-        case 0x82: return op("ADD D", 1)
-        case 0x83: return op("ADD E", 1)
-        case 0x84: return op("ADD H", 1)
-        case 0x85: return op("ADD L", 1)
-        case 0x86: return op("ADD M", 1)
-        case 0x87: return op("ADD A", 1)
-        case 0x88: return op("ADC B", 1)
-        case 0x89: return op("ADC C", 1)
-        case 0x8a: return op("ADC D", 1)
-        case 0x8b: return op("ADC E", 1)
-        case 0x8c: return op("ADC H", 1)
-        case 0x8d: return op("ADC L", 1)
-        case 0x8e: return op("ADC M", 1)
-        case 0x8f: return op("ADC A", 1)
-        case 0x90: return op("SUB B", 1)
-        case 0x91: return op("SUB C", 1)
-        case 0x92: return op("SUB D", 1)
-        case 0x93: return op("SUB E", 1)
-        case 0x94: return op("SUB H", 1)
-        case 0x95: return op("SUB L", 1)
-        case 0x96: return op("SUB M", 1)
-        case 0x97: return op("SUB A", 1)
-        case 0x98: return op("SBB B", 1)
-        case 0x99: return op("SBB C", 1)
-        case 0x9a: return op("SBB D", 1)
-        case 0x9b: return op("SBB E", 1)
-        case 0x9c: return op("SBB H", 1)
-        case 0x9d: return op("SBB L", 1)
-        case 0x9e: return op("SBB M", 1)
-        case 0x9f: return op("SBB A", 1)
-        case 0xa0: return op("ANA B", 1)
-        case 0xa1: return op("ANA C", 1)
-        case 0xa2: return op("ANA D", 1)
-        case 0xa3: return op("ANA E", 1)
-        case 0xa4: return op("ANA H", 1)
-        case 0xa5: return op("ANA L", 1)
-        case 0xa6: return op("ANA M", 1)
-        case 0xa7: return op("ANA A", 1)
-        case 0xa8: return op("XRA B", 1)
-        case 0xa9: return op("XRA C", 1)
-        case 0xaa: return op("XRA D", 1)
-        case 0xab: return op("XRA E", 1)
-        case 0xac: return op("XRA H", 1)
-        case 0xad: return op("XRA L", 1)
-        case 0xae: return op("XRA M", 1)
-        case 0xaf: return op("XRA A", 1)
-        case 0xb0: return op("ORA B", 1)
-        case 0xb1: return op("ORA C", 1)
-        case 0xb2: return op("ORA D", 1)
-        case 0xb3: return op("ORA E", 1)
-        case 0xb4: return op("ORA H", 1)
-        case 0xb5: return op("ORA L", 1)
-        case 0xb6: return op("ORA M", 1)
-        case 0xb7: return op("ORA A", 1)
-        case 0xb8: return op("CMP B", 1)
-        case 0xb9: return op("CMP C", 1)
-        case 0xba: return op("CMP D", 1)
-        case 0xbb: return op("CMP E", 1)
-        case 0xbc: return op("CMP H", 1)
-        case 0xbd: return op("CMP L", 1)
-        case 0xbe: return op("CMP M", 1)
-        case 0xbf: return op("CMP A", 1)
-        case 0xc0: return op("RNZ", 1)
-        case 0xc1: return op("POP B", 1)
-        case 0xc2: return op("JNZ adr", 3)
-        case 0xc3: return op("JMP adr", 3)
-        case 0xc4: return op("CNZ adr", 3)
-        case 0xc5: return op("PUSH B", 1)
-        case 0xc6: return op("ADI D8", 2)
-        case 0xc7: return op("RST 0", 1)
-        case 0xc8: return op("RZ", 1)
-        case 0xc9: return op("RET", 1)
-        case 0xca: return op("JZ adr", 3)
-        case 0xcb: return op("", 1)
-        case 0xcc: return op("CZ adr", 3)
-        case 0xcd: return op("CALL adr", 3)
-        case 0xce: return op("ACI D8", 2)
-        case 0xcf: return op("RST 1", 1)
-        case 0xd0: return op("RNC", 1)
-        case 0xd1: return op("POP D", 1)
-        case 0xd2: return op("JNC adr", 3)
-        case 0xd3: return op("OUT D8", 2)
-        case 0xd4: return op("CNC adr", 3)
-        case 0xd5: return op("PUSH D", 1)
-        case 0xd6: return op("SUI D8", 2)
-        case 0xd7: return op("RST 2", 1)
-        case 0xd8: return op("RC", 1)
-        case 0xd9: return op("", 1)
-        case 0xda: return op("JC adr", 3)
-        case 0xdb: return op("IN D8", 2)
-        case 0xdc: return op("CC adr", 3)
-        case 0xdd: return op("", 1)
-        case 0xde: return op("SBI D8", 2)
-        case 0xdf: return op("RST 3", 1)
-        case 0xe0: return op("RPO", 1)
-        case 0xe1: return op("POP H", 1)
-        case 0xe2: return op("JPO adr", 3)
-        case 0xe3: return op("XTHL", 1)
-        case 0xe4: return op("CPO adr", 3)
-        case 0xe5: return op("PUSH H", 1)
-        case 0xe6: return op("ANI D8", 2)
-        case 0xe7: return op("RST 4", 1)
-        case 0xe8: return op("RPE", 1)
-        case 0xe9: return op("PCHL", 1)
-        case 0xea: return op("JPE adr", 3)
-        case 0xeb: return op("XCHG", 1)
-        case 0xec: return op("CPE adr", 3)
-        case 0xed: return op("", 1)
-        case 0xee: return op("XRI D8", 2)
-        case 0xef: return op("RST 5", 1)
-        case 0xf0: return op("RP", 1)
-        case 0xf1: return op("POP PSW", 1)
-        case 0xf2: return op("JP adr", 3)
-        case 0xf3: return op("DI", 1)
-        case 0xf4: return op("CP adr", 3)
-        case 0xf5: return op("PUSH PSW", 1)
-        case 0xf6: return op("ORI D8", 2)
-        case 0xf7: return op("RST 6", 1)
-        case 0xf8: return op("RM", 1)
-        case 0xf9: return op("SPHL", 1)
-        case 0xfa: return op("JM adr", 3)
-        case 0xfb: return op("EI", 1)
-        case 0xfc: return op("CM adr", 3)
-        case 0xfd: return op("", 1)
-        case 0xfe: return op("CPI D8", 2)
-        case 0xff: return op("RST 7", 1)
-        default: throw new Error(`Invalid OP Code 0x${opCode.toString(16)}`)
+        case 0x00: return op("NOP", 1);
+        case 0x01: return op("LXI B,D16", 3);
+        case 0x02: return op("STAX B", 1);
+        case 0x03: return op("INX B", 1);
+        case 0x04: return op("INR B", 1);
+        case 0x05: return op("DCR B", 1);
+        case 0x06: return op("MVI B, D8", 2);
+        case 0x07: return op("RLC", 1);
+        case 0x08: return op("", 1);
+        case 0x09: return op("DAD B", 1);
+        case 0x0a: return op("LDAX B", 1);
+        case 0x0b: return op("DCX B", 1);
+        case 0x0c: return op("INR C", 1);
+        case 0x0d: return op("DCR C", 1);
+        case 0x0e: return op("MVI C,D8", 2);
+        case 0x0f: return op("RRC", 1);
+        case 0x10: return op("", 1);
+        case 0x11: return op("LXI D,D16", 3);
+        case 0x12: return op("STAX D", 1);
+        case 0x13: return op("INX D", 1);
+        case 0x14: return op("INR D", 1);
+        case 0x15: return op("DCR D", 1);
+        case 0x16: return op("MVI D, D8", 2);
+        case 0x17: return op("RAL", 1);
+        case 0x18: return op("", 1);
+        case 0x19: return op("DAD D", 1);
+        case 0x1a: return op("LDAX D", 1);
+        case 0x1b: return op("DCX D", 1);
+        case 0x1c: return op("INR E", 1);
+        case 0x1d: return op("DCR E", 1);
+        case 0x1e: return op("MVI E,D8", 2);
+        case 0x1f: return op("RAR", 1);
+        case 0x20: return op("RIM", 1);
+        case 0x21: return op("LXI H,D16", 3);
+        case 0x22: return op("SHLD adr", 3);
+        case 0x23: return op("INX H", 1);
+        case 0x24: return op("INR H", 1);
+        case 0x25: return op("DCR H", 1);
+        case 0x26: return op("MVI H,D8", 2);
+        case 0x27: return op ("DAA", 1);
+        case 0x28: return op("", 1);
+        case 0x29: return op("DAD H", 1);
+        case 0x2a: return op("LHLD adr", 3);
+        case 0x2b: return op("DCX H", 1);
+        case 0x2c: return op("INR L", 1);
+        case 0x2d: return op("DCR L", 1);
+        case 0x2e: return op("MVI L, D8", 2);
+        case 0x2f: return op("CMA", 1);
+        case 0x30: return op("SIM", 1);
+        case 0x31: return op("LXI SP, D16", 3);
+        case 0x32: return op("STA adr", 3);
+        case 0x33: return op("INX SP", 1);
+        case 0x34: return op("INR M", 1);
+        case 0x35: return op("DCR M", 1);
+        case 0x36: return op("MVI M,D8", 2);
+        case 0x37: return op("STC", 1);
+        case 0x38: return op("", 1);
+        case 0x39: return op("DAD SP", 1);
+        case 0x3a: return op("LDA adr", 3);
+        case 0x3b: return op("DCX SP", 1);
+        case 0x3c: return op("INR A", 1);
+        case 0x3d: return op("DCR A", 1);
+        case 0x3e: return op("MVI A,D8", 2);
+        case 0x3f: return op("CMC", 1);
+        case 0x40: return op("MOV B,B", 1);
+        case 0x41: return op("MOV B,C", 1);
+        case 0x42: return op("MOV B,D", 1);
+        case 0x43: return op("MOV B,E", 1);
+        case 0x44: return op("MOV B,H", 1);
+        case 0x45: return op("MOV B,L", 1);
+        case 0x46: return op("MOV B,M", 1);
+        case 0x47: return op("MOV B,A", 1);
+        case 0x48: return op("MOV C,B", 1);
+        case 0x49: return op("MOV C,C", 1);
+        case 0x4a: return op("MOV C,D", 1);
+        case 0x4b: return op("MOV C,E", 1);
+        case 0x4c: return op("MOV C,H", 1);
+        case 0x4d: return op("MOV C,L", 1);
+        case 0x4e: return op("MOV C,M", 1);
+        case 0x4f: return op("MOV C,A", 1);
+        case 0x50: return op("MOV D,B", 1);
+        case 0x51: return op("MOV D,C", 1);
+        case 0x52: return op("MOV D,D", 1);
+        case 0x53: return op("MOV D,E", 1);
+        case 0x54: return op("MOV D,H", 1);
+        case 0x55: return op("MOV D,L", 1);
+        case 0x56: return op("MOV D,M", 1);
+        case 0x57: return op("MOV D,A", 1);
+        case 0x58: return op("MOV E,B", 1);
+        case 0x59: return op("MOV E,C", 1);
+        case 0x5a: return op("MOV E,D", 1);
+        case 0x5b: return op("MOV E,E", 1);
+        case 0x5c: return op("MOV E,H", 1);
+        case 0x5d: return op("MOV E,L", 1);
+        case 0x5e: return op("MOV E,M", 1);
+        case 0x5f: return op("MOV E,A", 1);
+        case 0x60: return op("MOV H,B", 1);
+        case 0x61: return op("MOV H,C", 1);
+        case 0x62: return op("MOV H,D", 1);
+        case 0x63: return op("MOV H,E", 1);
+        case 0x64: return op("MOV H,H", 1);
+        case 0x65: return op("MOV H,L", 1);
+        case 0x66: return op("MOV H,M", 1);
+        case 0x67: return op("MOV H,A", 1);
+        case 0x68: return op("MOV L,B", 1);
+        case 0x69: return op("MOV L,C", 1);
+        case 0x6a: return op("MOV L,D", 1);
+        case 0x6b: return op("MOV L,E", 1);
+        case 0x6c: return op("MOV L,H", 1);
+        case 0x6d: return op("MOV L,L", 1);
+        case 0x6e: return op("MOV L,M", 1);
+        case 0x6f: return op("MOV L,A", 1);
+        case 0x70: return op("MOV M,B", 1);
+        case 0x71: return op("MOV M,C", 1);
+        case 0x72: return op("MOV M,D", 1);
+        case 0x73: return op("MOV M,E", 1);
+        case 0x74: return op("MOV M,H", 1);
+        case 0x75: return op("MOV M,L", 1);
+        case 0x76: return op("HLT", 1);
+        case 0x77: return op("MOV M,A", 1);
+        case 0x78: return op("MOV A,B", 1);
+        case 0x79: return op("MOV A,C", 1);
+        case 0x7a: return op("MOV A,D", 1);
+        case 0x7b: return op("MOV A,E", 1);
+        case 0x7c: return op("MOV A,H", 1);
+        case 0x7d: return op("MOV A,L", 1);
+        case 0x7e: return op("MOV A,M", 1);
+        case 0x7f: return op("MOV A,A", 1);
+        case 0x80: return op("ADD B", 1);
+        case 0x81: return op("ADD C", 1);
+        case 0x82: return op("ADD D", 1);
+        case 0x83: return op("ADD E", 1);
+        case 0x84: return op("ADD H", 1);
+        case 0x85: return op("ADD L", 1);
+        case 0x86: return op("ADD M", 1);
+        case 0x87: return op("ADD A", 1);
+        case 0x88: return op("ADC B", 1);
+        case 0x89: return op("ADC C", 1);
+        case 0x8a: return op("ADC D", 1);
+        case 0x8b: return op("ADC E", 1);
+        case 0x8c: return op("ADC H", 1);
+        case 0x8d: return op("ADC L", 1);
+        case 0x8e: return op("ADC M", 1);
+        case 0x8f: return op("ADC A", 1);
+        case 0x90: return op("SUB B", 1);
+        case 0x91: return op("SUB C", 1);
+        case 0x92: return op("SUB D", 1);
+        case 0x93: return op("SUB E", 1);
+        case 0x94: return op("SUB H", 1);
+        case 0x95: return op("SUB L", 1);
+        case 0x96: return op("SUB M", 1);
+        case 0x97: return op("SUB A", 1);
+        case 0x98: return op("SBB B", 1);
+        case 0x99: return op("SBB C", 1);
+        case 0x9a: return op("SBB D", 1);
+        case 0x9b: return op("SBB E", 1);
+        case 0x9c: return op("SBB H", 1);
+        case 0x9d: return op("SBB L", 1);
+        case 0x9e: return op("SBB M", 1);
+        case 0x9f: return op("SBB A", 1);
+        case 0xa0: return op("ANA B", 1);
+        case 0xa1: return op("ANA C", 1);
+        case 0xa2: return op("ANA D", 1);
+        case 0xa3: return op("ANA E", 1);
+        case 0xa4: return op("ANA H", 1);
+        case 0xa5: return op("ANA L", 1);
+        case 0xa6: return op("ANA M", 1);
+        case 0xa7: return op("ANA A", 1);
+        case 0xa8: return op("XRA B", 1);
+        case 0xa9: return op("XRA C", 1);
+        case 0xaa: return op("XRA D", 1);
+        case 0xab: return op("XRA E", 1);
+        case 0xac: return op("XRA H", 1);
+        case 0xad: return op("XRA L", 1);
+        case 0xae: return op("XRA M", 1);
+        case 0xaf: return op("XRA A", 1);
+        case 0xb0: return op("ORA B", 1);
+        case 0xb1: return op("ORA C", 1);
+        case 0xb2: return op("ORA D", 1);
+        case 0xb3: return op("ORA E", 1);
+        case 0xb4: return op("ORA H", 1);
+        case 0xb5: return op("ORA L", 1);
+        case 0xb6: return op("ORA M", 1);
+        case 0xb7: return op("ORA A", 1);
+        case 0xb8: return op("CMP B", 1);
+        case 0xb9: return op("CMP C", 1);
+        case 0xba: return op("CMP D", 1);
+        case 0xbb: return op("CMP E", 1);
+        case 0xbc: return op("CMP H", 1);
+        case 0xbd: return op("CMP L", 1);
+        case 0xbe: return op("CMP M", 1);
+        case 0xbf: return op("CMP A", 1);
+        case 0xc0: return op("RNZ", 1);
+        case 0xc1: return op("POP B", 1);
+        case 0xc2: return op("JNZ adr", 3);
+        case 0xc3: return op("JMP adr", 3);
+        case 0xc4: return op("CNZ adr", 3);
+        case 0xc5: return op("PUSH B", 1);
+        case 0xc6: return op("ADI D8", 2);
+        case 0xc7: return op("RST 0", 1);
+        case 0xc8: return op("RZ", 1);
+        case 0xc9: return op("RET", 1);
+        case 0xca: return op("JZ adr", 3);
+        case 0xcb: return op("", 1);
+        case 0xcc: return op("CZ adr", 3);
+        case 0xcd: return op("CALL adr", 3);
+        case 0xce: return op("ACI D8", 2);
+        case 0xcf: return op("RST 1", 1);
+        case 0xd0: return op("RNC", 1);
+        case 0xd1: return op("POP D", 1);
+        case 0xd2: return op("JNC adr", 3);
+        case 0xd3: return op("OUT D8", 2);
+        case 0xd4: return op("CNC adr", 3);
+        case 0xd5: return op("PUSH D", 1);
+        case 0xd6: return op("SUI D8", 2);
+        case 0xd7: return op("RST 2", 1);
+        case 0xd8: return op("RC", 1);
+        case 0xd9: return op("", 1);
+        case 0xda: return op("JC adr", 3);
+        case 0xdb: return op("IN D8", 2);
+        case 0xdc: return op("CC adr", 3);
+        case 0xdd: return op("", 1);
+        case 0xde: return op("SBI D8", 2);
+        case 0xdf: return op("RST 3", 1);
+        case 0xe0: return op("RPO", 1);
+        case 0xe1: return op("POP H", 1);
+        case 0xe2: return op("JPO adr", 3);
+        case 0xe3: return op("XTHL", 1);
+        case 0xe4: return op("CPO adr", 3);
+        case 0xe5: return op("PUSH H", 1);
+        case 0xe6: return op("ANI D8", 2);
+        case 0xe7: return op("RST 4", 1);
+        case 0xe8: return op("RPE", 1);
+        case 0xe9: return op("PCHL", 1);
+        case 0xea: return op("JPE adr", 3);
+        case 0xeb: return op("XCHG", 1);
+        case 0xec: return op("CPE adr", 3);
+        case 0xed: return op("", 1);
+        case 0xee: return op("XRI D8", 2);
+        case 0xef: return op("RST 5", 1);
+        case 0xf0: return op("RP", 1);
+        case 0xf1: return op("POP PSW", 1);
+        case 0xf2: return op("JP adr", 3);
+        case 0xf3: return op("DI", 1);
+        case 0xf4: return op("CP adr", 3);
+        case 0xf5: return op("PUSH PSW", 1);
+        case 0xf6: return op("ORI D8", 2);
+        case 0xf7: return op("RST 6", 1);
+        case 0xf8: return op("RM", 1);
+        case 0xf9: return op("SPHL", 1);
+        case 0xfa: return op("JM adr", 3);
+        case 0xfb: return op("EI", 1);
+        case 0xfc: return op("CM adr", 3);
+        case 0xfd: return op("", 1);
+        case 0xfe: return op("CPI D8", 2);
+        case 0xff: return op("RST 7", 1);
+        default: throw new Error(`Invalid OP Code 0x${opCode.toString(16)}`);
     }
-}
+};
 
 module.exports = {
     op,
