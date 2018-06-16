@@ -258,6 +258,7 @@ const decode = (opCode) => {
         case 0xfd: return op("", 0)
         case 0xfe: return op("CPI D8", 2)
         case 0xff: return op("RST 7", 1)
+        default: throw new Error(`Invalid OP Code 0x${opCode.toString(16)}`)
     }
 }
 
