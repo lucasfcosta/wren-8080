@@ -6,11 +6,11 @@ const dedupe = require('dedupe');
 const jsonexport = require('jsonexport');
 const program = require('commander');
 
-const toPlainText = (arr) => arr.map(i => i.name).join('\n');
 const toCsv = util.promisify(jsonexport);
 const writeFile = util.promisify(fs.writeFile);
 
 const { disassembleFile } = require('../src/disassembler');
+const { toPlainText } = require('../src/disassembler');
 
 program
     .usage('[path] [options]')
