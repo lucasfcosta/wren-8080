@@ -6,11 +6,13 @@ const { disassemble } = require('./disassembler');
 
 describe("disassembler", () => {
     describe("disassemble", () => {
-        it("returns the correct OP Code objects", () => {
-            const b = Buffer.from([0x00, 0x01, 0x02, 0x03]);
-            const instructions = disassemble(b).map(i => i.name);
-
-            expect(instructions).to.be.deep.equal([ "NOP", "LXI B,D16" ]);
+        it("returns the correct OP Codes, sizes and arguments", () => {
+            const b = Buffer.from([0x00, 0x01, 0xff, 0x0f]);
+            const instructions = disassemble(b);
+            expect(instructions).to.be.deep.equal([
+                { name: "NOP", size: 1 },
+                { name: "LXI B,D16", size: 3, arg1: 0xff, arg2: 0x0f }
+            ]);
         });
     });
 });

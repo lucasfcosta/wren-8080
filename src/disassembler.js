@@ -15,8 +15,15 @@ const disassemble = (buf) => {
     let offset = 0;
     while (offset < buf.length) {
         const instruction = decode(buf.readUInt8(offset));
+
+        const args = {};
+        for (let i = 1; i < instruction.size; i++) {
+            args[`arg${i}`] = buf.readUInt8(offset + i);
+        }
+
         offset += instruction.size;
-        instructions.push(instruction);
+
+        instructions.push(Object.assign(instruction, args));
     }
     return instructions;
 };
