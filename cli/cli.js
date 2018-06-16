@@ -13,6 +13,7 @@ const writeFile = util.promisify(fs.writeFile)
 const { disassembleFile } = require('../src/disassembler');
 
 program
+    .usage('[path] [options]')
     .option('-d, --dedupe', 'Does not output duplicate instructions')
     .option('-c, --csv <outputPath>', 'Save the results to a csv file')
     .option('-t, --txt <outputPath>', 'Save the results to a text file')
