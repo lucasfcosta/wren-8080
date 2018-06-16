@@ -6,7 +6,7 @@
   "bin": "cli/cli.js",
   "scripts": {
     "test": "mocha './{,!(node_modules)/**/}*.spec.js'",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint . --ignore-path .gitignore"
   },
   "repository": {
     "type": "git",
