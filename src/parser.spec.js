@@ -56,6 +56,23 @@ describe("parser", () => {
             });
         });
 
+        describe('when opOnly is true', () => {
+            it("excludes the offset from the beginning of the string", () => {
+                const input = [
+                    { name: "LXI SP,D16", size: 3, arg1: 0xc1, arg2: 0xf1 },
+                    { name: "MVI M,D8", size: 3, arg1: 0xc2, arg2: 0xf2 },
+                    { name: "LXI H,D16", size: 3, arg1: 0xc3, arg2: 0xf3 },
+                ];
+
+                const expected = ([
+                    "LXI SP,D16",
+                    "MVI M,D8",
+                    "LXI H,D16"
+                ]).join('\n');
+
+                expect(toPlainText(input, true)).to.be.equal(expected);
+            });
+        });
     });
 });
 

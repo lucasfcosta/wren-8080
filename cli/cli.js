@@ -28,10 +28,10 @@ const output = async (instructions) => {
     if (program.csv) {
         return writeFile(program.csv, (await toCsv(instructions)));
     } else if (program.txt) {
-        return writeFile(program.txt, (await toPlainText(instructions)));
+        return writeFile(program.txt, (await toPlainText(instructions, program.dedupe)));
     }
 
-    console.log(toPlainText(instructions)); // eslint-disable-line no-console
+    console.log(toPlainText(instructions, program.dedupe)); // eslint-disable-line no-console
 };
 
 program.action(main);
