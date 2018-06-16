@@ -23,15 +23,33 @@ describe("parser", () => {
         describe('when there is one argument', () => {
             it("returns a string with names and the first arguments only", () => {
                 const input = [
-                    { name: "INX D", size: 1, arg1: 0x10 },
-                    { name: "DCR E", size: 1, arg1: 0xf1 },
-                    { name: "DCR H", size: 1, arg1: 0xc3 },
+                    { name: "MVI H,D8", size: 2, arg1: 0x10 },
+                    { name: "MVI C,D8", size: 2, arg1: 0xf1 },
+                    { name: "MVI D,D8", size: 2, arg1: 0xc3 },
                 ];
 
                 const expected = ([
-                    "000000 INX D, 0x10",
-                    "000001 DCR E, 0xf1",
-                    "000002 DCR H, 0xc3"
+                    "000000 MVI H,D8, 0x10",
+                    "000002 MVI C,D8, 0xf1",
+                    "000004 MVI D,D8, 0xc3"
+                ]).join('\n');
+
+                expect(toPlainText(input)).to.be.equal(expected);
+            });
+        });
+
+        describe('when there are two arguments', () => {
+            it("returns a string with names and the arguments", () => {
+                const input = [
+                    { name: "LXI SP,D16", size: 3, arg1: 0xc1, arg2: 0xf1 },
+                    { name: "MVI M,D8", size: 3, arg1: 0xc2, arg2: 0xf2 },
+                    { name: "LXI H,D16", size: 3, arg1: 0xc3, arg2: 0xf3 },
+                ];
+
+                const expected = ([
+                    "000000 LXI SP,D16, 0xc1, 0xf1",
+                    "000003 MVI M,D8, 0xc2, 0xf2",
+                    "000006 LXI H,D16, 0xc3, 0xf3"
                 ]).join('\n');
 
                 expect(toPlainText(input)).to.be.equal(expected);
