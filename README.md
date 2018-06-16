@@ -1,6 +1,6 @@
 # wren-8080
 
-An Intel 8080 disassembler. Named after [Sir Christopher Wren](https://pt.wikipedia.org/wiki/Christopher_Wren) 🇬.
+An Intel 8080 disassembler. Named after [Sir Christopher Wren](https://pt.wikipedia.org/wiki/Christopher_Wren) 🇬🇧.
 
 
 ## CLI Usage
