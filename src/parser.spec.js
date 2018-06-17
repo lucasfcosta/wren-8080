@@ -23,9 +23,9 @@ describe("parser", () => {
         describe('when there is one argument', () => {
             it("returns a string with names and the first arguments only", () => {
                 const input = [
-                    { name: "MVI H,D8", size: 2, arg1: 0x10 },
-                    { name: "MVI C,D8", size: 2, arg1: 0xf1 },
-                    { name: "MVI D,D8", size: 2, arg1: 0xc3 },
+                    { name: "MVI H,D8", size: 2, arg0: 0x10 },
+                    { name: "MVI C,D8", size: 2, arg0: 0xf1 },
+                    { name: "MVI D,D8", size: 2, arg0: 0xc3 },
                 ];
 
                 const expected = ([
@@ -41,9 +41,9 @@ describe("parser", () => {
         describe('when there are two arguments', () => {
             it("returns a string with names and the arguments", () => {
                 const input = [
-                    { name: "LXI SP,D16", size: 3, arg1: 0xc1, arg2: 0xf1 },
-                    { name: "MVI M,D8", size: 3, arg1: 0xc2, arg2: 0xf2 },
-                    { name: "LXI H,D16", size: 3, arg1: 0xc3, arg2: 0xf3 },
+                    { name: "LXI SP,D16", size: 3, arg0: 0xc1, arg1: 0xf1 },
+                    { name: "MVI M,D8", size: 3, arg0: 0xc2, arg1: 0xf2 },
+                    { name: "LXI H,D16", size: 3, arg0: 0xc3, arg1: 0xf3 },
                 ];
 
                 const expected = ([
@@ -59,9 +59,9 @@ describe("parser", () => {
         describe('when opOnly is true', () => {
             it("excludes the offset from the beginning of the string", () => {
                 const input = [
-                    { name: "LXI SP,D16", size: 3, arg1: 0xc1, arg2: 0xf1 },
-                    { name: "MVI M,D8", size: 3, arg1: 0xc2, arg2: 0xf2 },
-                    { name: "LXI H,D16", size: 3, arg1: 0xc3, arg2: 0xf3 },
+                    { name: "LXI SP,D16", size: 3, arg0: 0xc1, arg1: 0xf1 },
+                    { name: "MVI M,D8", size: 3, arg0: 0xc2, arg1: 0xf2 },
+                    { name: "LXI H,D16", size: 3, arg0: 0xc3, arg1: 0xf3 },
                 ];
 
                 const expected = ([

@@ -11,7 +11,7 @@ describe("disassembler", () => {
             const instructions = disassemble(b);
             expect(instructions).to.be.deep.equal([
                 { name: "NOP", size: 1 },
-                { name: "LXI B,D16", size: 3, arg1: 0xff, arg2: 0x0f }
+                { name: "LXI B,D16", size: 3, arg0: 0x0f, arg1: 0xff }
             ]);
         });
     });

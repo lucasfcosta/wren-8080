@@ -18,7 +18,7 @@ const disassemble = (buf) => {
 
         const args = {};
         for (let i = 1; i < instruction.size; i++) {
-            args[`arg${i}`] = buf.readUInt8(offset + i);
+            args[`arg${instruction.size - i - 1}`] = buf.readUInt8(offset + i);
         }
 
         offset += instruction.size;
