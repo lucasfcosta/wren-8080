@@ -1,6 +1,6 @@
 {
   "name": "wren-8080",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "An Intel 8080 disassembler",
   "main": "index.js",
   "bin": "cli/cli.js",
